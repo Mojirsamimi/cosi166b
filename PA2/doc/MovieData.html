@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>class MovieData - RDoc Documentation</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script src="./js/jquery.js"></script>
+<script src="./js/darkfish.js"></script>
+
+<link href="./css/fonts.css" rel="stylesheet">
+<link href="./css/rdoc.css" rel="stylesheet">
+
+
+
+<body id="top" role="document" class="class">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="./index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="./table_of_contents.html#pages">Pages</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="class-metadata">
+    
+    <div id="parent-class-section" class="nav-section">
+  <h3>Parent</h3>
+
+  
+  <p class="link">Object
+  
+</div>
+
+    
+    
+    <!-- Method Quickref -->
+<div id="method-list-section" class="nav-section">
+  <h3>Methods</h3>
+
+  <ul class="link-list" role="directory">
+    
+    <li ><a href="#method-c-new">::new</a>
+    
+    <li ><a href="#method-i-load_data">#load_data</a>
+    
+    <li ><a href="#method-i-load_test">#load_test</a>
+    
+    <li ><a href="#method-i-most_similar">#most_similar</a>
+    
+    <li ><a href="#method-i-movies">#movies</a>
+    
+    <li ><a href="#method-i-popularity">#popularity</a>
+    
+    <li ><a href="#method-i-popularity_list">#popularity_list</a>
+    
+    <li ><a href="#method-i-popularity_list2">#popularity_list2</a>
+    
+    <li ><a href="#method-i-predict">#predict</a>
+    
+    <li ><a href="#method-i-rating">#rating</a>
+    
+    <li ><a href="#method-i-run_test">#run_test</a>
+    
+    <li ><a href="#method-i-similarity">#similarity</a>
+    
+    <li ><a href="#method-i-viewers">#viewers</a>
+    
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-labelledby="class-MovieData">
+  <h1 id="class-MovieData" class="class">
+    class MovieData
+  </h1>
+
+  <section class="description">
+    
+  </section>
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Class Methods</h3>
+       </header>
+
+    
+      <div id="method-c-new" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">(folderpath,filename="u")</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>The constructor of the class</p>
+          
+          
+
+          
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File movie_data.rb, line 5</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">folderpath</span>,<span class="ruby-identifier">filename</span>=<span class="ruby-string">&quot;u&quot;</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">filename</span><span class="ruby-operator">==</span><span class="ruby-string">&quot;u&quot;</span>
+    <span class="ruby-identifier">load_data</span>(<span class="ruby-identifier">folderpath</span><span class="ruby-operator">+</span><span class="ruby-string">&quot;/u.data&quot;</span>) 
+  <span class="ruby-keyword">else</span> 
+    <span class="ruby-identifier">load_data</span>(<span class="ruby-identifier">folderpath</span><span class="ruby-operator">+</span><span class="ruby-string">&quot;/&quot;</span><span class="ruby-operator">+</span><span class="ruby-identifier">filename</span><span class="ruby-operator">+</span><span class="ruby-string">&quot;.base&quot;</span>)
+    <span class="ruby-identifier">load_test</span>(<span class="ruby-identifier">folderpath</span><span class="ruby-operator">+</span><span class="ruby-string">&quot;/&quot;</span><span class="ruby-operator">+</span><span class="ruby-identifier">filename</span><span class="ruby-operator">+</span><span class="ruby-string">&quot;.test&quot;</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Instance Methods</h3>
+       </header>
+
+    
+      <div id="method-i-load_data" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">load_data</span><span
+            class="method-args">(filename='./ml-100k/u.data')</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Reads the data from training set and stores it in appropriate data
+structres</p>
+          
+          
+
+          
+          <div class="method-source-code" id="load_data-source">
+            <pre><span class="ruby-comment"># File movie_data.rb, line 40</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">load_data</span>(<span class="ruby-identifier">filename</span>=<span class="ruby-string">&#39;./ml-100k/u.data&#39;</span>)
+  <span class="ruby-identifier">datafile</span> = <span class="ruby-identifier">open</span>(<span class="ruby-identifier">filename</span>)
+  <span class="ruby-comment">#three data structure to store the data</span>
+  <span class="ruby-ivar">@data</span>=<span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span> <span class="ruby-comment">#array of arrays which stores each line of the the data</span>
+  <span class="ruby-ivar">@movies</span>=<span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span> <span class="ruby-comment">#map that for each unique movie id in the data file, stores its relevant records</span>
+  <span class="ruby-ivar">@users</span>=<span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span> <span class="ruby-comment">#map that for each unique user in the data file, stores its relevant records</span>
+  <span class="ruby-identifier">datafile</span>.<span class="ruby-identifier">each_line</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">line</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">linedata</span>=<span class="ruby-identifier">line</span>.<span class="ruby-identifier">split</span>(<span class="ruby-string">&quot; &quot;</span>).<span class="ruby-identifier">map</span>(<span class="ruby-operator">&amp;</span><span class="ruby-value">:to_i</span>)
+    <span class="ruby-ivar">@data</span>.<span class="ruby-identifier">push</span>(<span class="ruby-identifier">linedata</span>)
+    <span class="ruby-keyword">if</span> <span class="ruby-operator">!</span><span class="ruby-ivar">@users</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-identifier">linedata</span>[<span class="ruby-value">0</span>])
+      <span class="ruby-ivar">@users</span>[<span class="ruby-identifier">linedata</span>[<span class="ruby-value">0</span>]]=[<span class="ruby-identifier">linedata</span>]
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-ivar">@users</span>[<span class="ruby-identifier">linedata</span>[<span class="ruby-value">0</span>]].<span class="ruby-identifier">push</span>(<span class="ruby-identifier">linedata</span>)
+    <span class="ruby-keyword">end</span>
+    
+    <span class="ruby-keyword">if</span> <span class="ruby-operator">!</span><span class="ruby-ivar">@movies</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-identifier">linedata</span>[<span class="ruby-value">1</span>])
+      <span class="ruby-ivar">@movies</span>[<span class="ruby-identifier">linedata</span>[<span class="ruby-value">1</span>]]=[<span class="ruby-identifier">linedata</span>]
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-ivar">@movies</span>[<span class="ruby-identifier">linedata</span>[<span class="ruby-value">1</span>]].<span class="ruby-identifier">push</span>(<span class="ruby-identifier">linedata</span>)
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">datafile</span>.<span class="ruby-identifier">close</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-load_test" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">load_test</span><span
+            class="method-args">(filename)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Reads the data from test set and stores it in appropriate data structres</p>
+          
+          
+
+          
+          <div class="method-source-code" id="load_test-source">
+            <pre><span class="ruby-comment"># File movie_data.rb, line 15</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">load_test</span>(<span class="ruby-identifier">filename</span>)
+  <span class="ruby-identifier">datafile</span> = <span class="ruby-identifier">open</span>(<span class="ruby-identifier">filename</span>)
+  <span class="ruby-comment">#three data structure to store the data</span>
+  <span class="ruby-ivar">@test_data</span>=<span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span> <span class="ruby-comment">#array of arrays which stores each line of the the data</span>
+  <span class="ruby-ivar">@test_movies</span>=<span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span> <span class="ruby-comment">#map that for each unique movie id in the data file, stores its relevant records</span>
+  <span class="ruby-ivar">@test_users</span>=<span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span> <span class="ruby-comment">#map that for each unique user in the data file, stores its relevant records</span>
+  <span class="ruby-identifier">datafile</span>.<span class="ruby-identifier">each_line</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">line</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">linedata</span>=<span class="ruby-identifier">line</span>.<span class="ruby-identifier">split</span>(<span class="ruby-string">&quot; &quot;</span>).<span class="ruby-identifier">map</span>(<span class="ruby-operator">&amp;</span><span class="ruby-value">:to_i</span>)
+    <span class="ruby-ivar">@test_data</span>.<span class="ruby-identifier">push</span>(<span class="ruby-identifier">linedata</span>)
+    <span class="ruby-keyword">if</span> <span class="ruby-operator">!</span><span class="ruby-ivar">@test_users</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-identifier">linedata</span>[<span class="ruby-value">0</span>])
+      <span class="ruby-ivar">@test_users</span>[<span class="ruby-identifier">linedata</span>[<span class="ruby-value">0</span>]]=[<span class="ruby-identifier">linedata</span>]
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-ivar">@test_users</span>[<span class="ruby-identifier">linedata</span>[<span class="ruby-value">0</span>]].<span class="ruby-identifier">push</span>(<span class="ruby-identifier">linedata</span>)
+    <span class="ruby-keyword">end</span>
+    
+    <span class="ruby-keyword">if</span> <span class="ruby-operator">!</span><span class="ruby-ivar">@test_movies</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-identifier">linedata</span>[<span class="ruby-value">1</span>])
+      <span class="ruby-ivar">@test_movies</span>[<span class="ruby-identifier">linedata</span>[<span class="ruby-value">1</span>]]=[<span class="ruby-identifier">linedata</span>]
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-ivar">@test_movies</span>[<span class="ruby-identifier">linedata</span>[<span class="ruby-value">1</span>]].<span class="ruby-identifier">push</span>(<span class="ruby-identifier">linedata</span>)
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">datafile</span>.<span class="ruby-identifier">close</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-most_similar" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">most_similar</span><span
+            class="method-args">(u)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns array of users which are most similar to u.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="most_similar-source">
+            <pre><span class="ruby-comment"># File movie_data.rb, line 200</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">most_similar</span>(<span class="ruby-identifier">u</span>)
+  <span class="ruby-identifier">sim_list</span>=<span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-comment">#for each user in the data we calculate the similarity of it with the user &quot;u&quot;</span>
+  <span class="ruby-comment">#and create a list of similarity</span>
+  <span class="ruby-ivar">@users</span>.<span class="ruby-identifier">each_key</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">user</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">user!</span>=<span class="ruby-identifier">u</span>
+      <span class="ruby-identifier">sim_list</span>.<span class="ruby-identifier">push</span>([<span class="ruby-identifier">user</span>,<span class="ruby-identifier">similarity</span>(<span class="ruby-identifier">u</span>,<span class="ruby-identifier">user</span>)])
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-comment">#sorts the similarity list in decreasing order and returns the top 100</span>
+  <span class="ruby-identifier">sim_list</span>.<span class="ruby-identifier">sort_by!</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">itm</span><span class="ruby-operator">|</span> <span class="ruby-operator">-</span><span class="ruby-identifier">itm</span>[<span class="ruby-value">1</span>]}
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">sim_list</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-movies" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">movies</span><span
+            class="method-args">(u)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns the array of movies that user u has watched</p>
+          
+          
+
+          
+          <div class="method-source-code" id="movies-source">
+            <pre><span class="ruby-comment"># File movie_data.rb, line 93</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">movies</span>(<span class="ruby-identifier">u</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-ivar">@users</span>[<span class="ruby-identifier">u</span>].<span class="ruby-identifier">collect</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">itm</span><span class="ruby-operator">|</span> <span class="ruby-identifier">itm</span>[<span class="ruby-value">1</span>]}
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-popularity" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">popularity</span><span
+            class="method-args">(movie_id)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Retrurns the popularity of a movie. Popularity is defined as the average of
+ratings for that movie</p>
+          
+          
+
+          
+          <div class="method-source-code" id="popularity-source">
+            <pre><span class="ruby-comment"># File movie_data.rb, line 114</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">popularity</span>(<span class="ruby-identifier">movie_id</span>)
+  <span class="ruby-comment">#get all records which their movie_id is equal to the argument</span>
+  <span class="ruby-identifier">movie_data</span>=<span class="ruby-ivar">@movies</span>[<span class="ruby-identifier">movie_id</span>] 
+  
+  <span class="ruby-comment">#return 0 if there is no such a movie in data</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">movie_data</span>.<span class="ruby-identifier">size</span><span class="ruby-operator">==</span><span class="ruby-value">0</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-value">0</span>
+  <span class="ruby-keyword">end</span>
+  
+  <span class="ruby-comment">#calculate the average of all ratings for this movie id and return it</span>
+  <span class="ruby-identifier">sum</span>=<span class="ruby-value">0.0</span>
+  <span class="ruby-identifier">movie_data</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">movie</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">sum</span><span class="ruby-operator">+=</span><span class="ruby-identifier">movie</span>[<span class="ruby-value">2</span>]
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> (<span class="ruby-identifier">sum</span><span class="ruby-operator">/</span><span class="ruby-identifier">movie_data</span>.<span class="ruby-identifier">size</span>)  
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-popularity_list" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">popularity_list</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns a list of movies sorted by popularity in decreasing order</p>
+          
+          
+
+          
+          <div class="method-source-code" id="popularity_list-source">
+            <pre><span class="ruby-comment"># File movie_data.rb, line 132</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">popularity_list</span>
+  <span class="ruby-comment">#pop_list is an array of all movie ids and their popularity ([movie_id,popularity])</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@pop_list</span><span class="ruby-operator">==</span><span class="ruby-keyword">nil</span>     
+    <span class="ruby-ivar">@pop_list</span>=<span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-ivar">@data</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">itm</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">movie_id</span>=<span class="ruby-identifier">itm</span>[<span class="ruby-value">1</span>]
+      <span class="ruby-comment">#if this movie id does not exist in the list, add it to the list</span>
+      <span class="ruby-keyword">if</span> <span class="ruby-ivar">@pop_list</span>.<span class="ruby-identifier">index</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">x</span><span class="ruby-operator">|</span> <span class="ruby-identifier">x</span>[<span class="ruby-value">0</span>]<span class="ruby-operator">==</span><span class="ruby-identifier">movie_id</span>}<span class="ruby-operator">==</span><span class="ruby-keyword">nil</span> 
+        <span class="ruby-ivar">@pop_list</span>.<span class="ruby-identifier">push</span>([<span class="ruby-identifier">movie_id</span>,<span class="ruby-identifier">popularity</span>(<span class="ruby-identifier">movie_id</span>)])
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-comment">#sort the pop_list array descending based on popularity (average rating)</span>
+    <span class="ruby-ivar">@pop_list</span>.<span class="ruby-identifier">sort_by!</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">item</span><span class="ruby-operator">|</span> <span class="ruby-operator">-</span><span class="ruby-identifier">item</span>[<span class="ruby-value">1</span>]}
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-ivar">@pop_list</span> 
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-popularity_list2" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">popularity_list2</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns a list of movies sorted by popularity in decreasing order (faster
+version of the function <a
+href="MovieData.html#method-i-popularity_list">#popularity_list</a>)</p>
+          
+          
+
+          
+          <div class="method-source-code" id="popularity_list2-source">
+            <pre><span class="ruby-comment"># File movie_data.rb, line 150</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">popularity_list2</span>
+    
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@pop_list</span><span class="ruby-operator">==</span><span class="ruby-keyword">nil</span>     
+    <span class="ruby-comment">#pop_map is a map that contains items with the key &quot;movie_id&quot; and value &quot;[rate_sum,count]&quot;. </span>
+    <span class="ruby-identifier">pop_map</span>=<span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-ivar">@data</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">itm</span><span class="ruby-operator">|</span>
+      <span class="ruby-keyword">if</span> <span class="ruby-operator">!</span><span class="ruby-identifier">pop_map</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-identifier">itm</span>[<span class="ruby-value">1</span>]) <span class="ruby-comment">#if this movie id does not exist in the map, add it to the map</span>
+        <span class="ruby-identifier">pop_map</span>[<span class="ruby-identifier">itm</span>[<span class="ruby-value">1</span>]]=[<span class="ruby-identifier">itm</span>[<span class="ruby-value">2</span>],<span class="ruby-value">1</span>]
+      <span class="ruby-keyword">else</span> <span class="ruby-comment">#if this movie id exist in the map, sum up the existing &quot;rate_sum&quot; with rating of the current item and increase &quot;count&quot; by 1.</span>
+        <span class="ruby-identifier">pop_map</span>[<span class="ruby-identifier">itm</span>[<span class="ruby-value">1</span>]][<span class="ruby-value">0</span>]<span class="ruby-operator">+=</span><span class="ruby-identifier">itm</span>[<span class="ruby-value">2</span>]
+        <span class="ruby-identifier">pop_map</span>[<span class="ruby-identifier">itm</span>[<span class="ruby-value">1</span>]][<span class="ruby-value">1</span>]<span class="ruby-operator">+=</span><span class="ruby-value">1</span>
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-ivar">@pop_list</span>=<span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-identifier">pop_map</span>.<span class="ruby-identifier">each_pair</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">key</span>,<span class="ruby-identifier">value</span><span class="ruby-operator">|</span>
+      <span class="ruby-comment">#push each movie id and its average rating to the pop_list. average= rate_sum/count</span>
+      <span class="ruby-ivar">@pop_list</span>.<span class="ruby-identifier">push</span>([<span class="ruby-identifier">key</span>,<span class="ruby-identifier">value</span>[<span class="ruby-value">0</span>].<span class="ruby-identifier">to_f</span><span class="ruby-operator">/</span><span class="ruby-identifier">value</span>[<span class="ruby-value">1</span>]])
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-comment">#sort the pop_list array descending based on popularity (average rating)</span>
+    <span class="ruby-ivar">@pop_list</span>.<span class="ruby-identifier">sort_by!</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">item</span><span class="ruby-operator">|</span> <span class="ruby-operator">-</span><span class="ruby-identifier">item</span>[<span class="ruby-value">1</span>]}
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-ivar">@pop_list</span> 
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-predict" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">predict</span><span
+            class="method-args">(u,m)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns a floating point number between 1.0 and 5.0 as an estimate of what
+user u would rate movie m</p>
+          
+          
+
+          
+          <div class="method-source-code" id="predict-source">
+            <pre><span class="ruby-comment"># File movie_data.rb, line 75</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">predict</span>(<span class="ruby-identifier">u</span>,<span class="ruby-identifier">m</span>)
+  <span class="ruby-identifier">similar_users</span>=<span class="ruby-identifier">most_similar</span>(<span class="ruby-identifier">u</span>)
+  <span class="ruby-identifier">weighted_rate</span>=<span class="ruby-value">0.0</span>
+  <span class="ruby-identifier">sum</span>=<span class="ruby-value">0.0</span>
+  <span class="ruby-identifier">similar_users</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">user</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">rate</span>=<span class="ruby-identifier">rating</span>(<span class="ruby-identifier">user</span>[<span class="ruby-value">0</span>],<span class="ruby-identifier">m</span>)
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">rate!</span>=<span class="ruby-value">0</span>
+      <span class="ruby-identifier">weighted_rate</span><span class="ruby-operator">+=</span><span class="ruby-identifier">user</span>[<span class="ruby-value">1</span>]<span class="ruby-operator">*</span><span class="ruby-identifier">rate</span>
+      <span class="ruby-identifier">sum</span><span class="ruby-operator">+=</span><span class="ruby-identifier">user</span>[<span class="ruby-value">1</span>]
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">sum</span><span class="ruby-operator">==</span><span class="ruby-value">0</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-value">0</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">weighted_rate</span><span class="ruby-operator">/</span><span class="ruby-identifier">sum</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-rating" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">rating</span><span
+            class="method-args">(u,m)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns the rating that user u gave movie m in the training set, and 0 if
+user u did not rate movie m</p>
+          
+          
+
+          
+          <div class="method-source-code" id="rating-source">
+            <pre><span class="ruby-comment"># File movie_data.rb, line 66</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">rating</span>(<span class="ruby-identifier">u</span>,<span class="ruby-identifier">m</span>)
+  <span class="ruby-identifier">rec</span>=<span class="ruby-ivar">@users</span>[<span class="ruby-identifier">u</span>].<span class="ruby-identifier">rassoc</span>(<span class="ruby-identifier">m</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">rec</span><span class="ruby-operator">==</span><span class="ruby-keyword">nil</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-value">0</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">rec</span>[<span class="ruby-value">2</span>]
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-run_test" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">run_test</span><span
+            class="method-args">(k)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Runs the predict method on the first k ratings in the test set and returns
+a <a href="MovieTest.html">MovieTest</a> object containing the results.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="run_test-source">
+            <pre><span class="ruby-comment"># File movie_data.rb, line 103</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">run_test</span>(<span class="ruby-identifier">k</span>)
+  <span class="ruby-identifier">test</span>=<span class="ruby-constant">MovieTest</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-ivar">@test_data</span>.<span class="ruby-identifier">first</span>(<span class="ruby-identifier">k</span>).<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">data</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">predict_rate</span>=<span class="ruby-identifier">predict</span>(<span class="ruby-identifier">data</span>[<span class="ruby-value">0</span>],<span class="ruby-identifier">data</span>[<span class="ruby-value">1</span>])
+    <span class="ruby-identifier">test</span>.<span class="ruby-identifier">add_to_result</span>([<span class="ruby-identifier">data</span>[<span class="ruby-value">0</span>],<span class="ruby-identifier">data</span>[<span class="ruby-value">1</span>],<span class="ruby-identifier">data</span>[<span class="ruby-value">2</span>],<span class="ruby-identifier">predict_rate</span>])
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">test</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-similarity" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">similarity</span><span
+            class="method-args">(user1,user2)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns the similarity between two users. Similarity is defined as the
+average of (4 - distance between rating of user 1 and 2) for movie ids
+which both users have rated</p>
+          
+          
+
+          
+          <div class="method-source-code" id="similarity-source">
+            <pre><span class="ruby-comment"># File movie_data.rb, line 175</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">similarity</span>(<span class="ruby-identifier">user1</span>,<span class="ruby-identifier">user2</span>)
+  <span class="ruby-comment">#retrieves the recorded related to user1 and user2</span>
+  <span class="ruby-comment">#then create an array which contains the movie ids which both user have rated them</span>
+  <span class="ruby-identifier">u1</span>=<span class="ruby-ivar">@users</span>[<span class="ruby-identifier">user1</span>]
+  <span class="ruby-identifier">u2</span>=<span class="ruby-ivar">@users</span>[<span class="ruby-identifier">user2</span>]
+  <span class="ruby-identifier">u1_movies</span>=<span class="ruby-identifier">u1</span>.<span class="ruby-identifier">collect</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">itm</span><span class="ruby-operator">|</span> <span class="ruby-identifier">itm</span>[<span class="ruby-value">1</span>]}
+  <span class="ruby-identifier">u2_movies</span>=<span class="ruby-identifier">u2</span>.<span class="ruby-identifier">collect</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">itm</span><span class="ruby-operator">|</span> <span class="ruby-identifier">itm</span>[<span class="ruby-value">1</span>]}
+  <span class="ruby-identifier">common_movies</span>=<span class="ruby-identifier">u1_movies</span> <span class="ruby-operator">&amp;</span> <span class="ruby-identifier">u2_movies</span>
+  
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">common_movies</span>.<span class="ruby-identifier">empty?</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-value">0</span>
+  <span class="ruby-keyword">end</span>
+  
+  <span class="ruby-comment">#Similarity is defined as the average of (4 - distance between rating of user 1 and 2) for movie id</span>
+  <span class="ruby-comment">#which both usres have rated</span>
+  <span class="ruby-identifier">similarity</span>=<span class="ruby-value">0.0</span>
+  <span class="ruby-identifier">common_movies</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">movie</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">rating1</span>=<span class="ruby-identifier">u1</span>.<span class="ruby-identifier">rassoc</span>(<span class="ruby-identifier">movie</span>)[<span class="ruby-value">2</span>]
+    <span class="ruby-identifier">rating2</span>=<span class="ruby-identifier">u2</span>.<span class="ruby-identifier">rassoc</span>(<span class="ruby-identifier">movie</span>)[<span class="ruby-value">2</span>]
+    <span class="ruby-identifier">similarity</span><span class="ruby-operator">+=</span><span class="ruby-value">4</span><span class="ruby-operator">-</span>(<span class="ruby-identifier">rating1</span><span class="ruby-operator">-</span><span class="ruby-identifier">rating2</span>).<span class="ruby-identifier">abs</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">similarity</span><span class="ruby-operator">/</span><span class="ruby-identifier">common_movies</span>.<span class="ruby-identifier">size</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-viewers" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">viewers</span><span
+            class="method-args">(m)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns the array of users that have seen movie m</p>
+          
+          
+
+          
+          <div class="method-source-code" id="viewers-source">
+            <pre><span class="ruby-comment"># File movie_data.rb, line 98</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">viewers</span>(<span class="ruby-identifier">m</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-ivar">@movies</span>[<span class="ruby-identifier">m</span>].<span class="ruby-identifier">collect</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">itm</span><span class="ruby-operator">|</span> <span class="ruby-identifier">itm</span>[<span class="ruby-value">0</span>]}
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+  </section>
+</main>
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="http://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="http://docs.seattlerb.org/rdoc/">RDoc</a> 4.2.0.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+
